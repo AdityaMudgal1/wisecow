@@ -1,0 +1,8 @@
+# TLS / SSL certificates and private keys
+*.key
+*.pfx
+*.crt
+*.cer
+
+# Local Kubernetes / Minikube files
+.kube/
