@@ -33,5 +33,5 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/wisecow:latest
-            ghcr.io/${{ github.repository_owner }}/wisecow:${{ github.sha }}
+            ghcr.io/adityamudgal1/wisecow:latest
+            ghcr.io/adityamudgal1/wisecow:${{ github.sha }}
