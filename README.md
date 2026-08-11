@@ -1,28 +1,53 @@
-# Cow wisdom web server
+# Wisecow – Kubernetes Deployment with Docker, CI/CD and TLS
 
-## Prerequisites
+Wisecow is a simple web application that displays random cow wisdom.
+This project containerizes the application using Docker and deploys it on
+Kubernetes with a Kubernetes Service, NGINX Ingress, HTTPS/TLS, and GitHub Actions.
 
-```
-sudo apt install fortune-mod cowsay -y
-```
+---
 
-## How to use?
+## Problem Statement
 
-1. Run `./wisecow.sh`
-2. Point the browser to server port (default 4499)
+Deploy the Wisecow application as a Kubernetes application.
 
-## What to expect?
-![wisecow](https://github.com/nyrahul/wisecow/assets/9133227/8d6bfde3-4a5a-480e-8d55-3fef60300d98)
+### Requirements
 
-# Problem Statement
-Deploy the wisecow application as a k8s app
+1. Create a Dockerfile and corresponding Kubernetes manifests to deploy the
+   Wisecow application in a Kubernetes environment. The Wisecow service should
+   be exposed using a Kubernetes Service.
 
-## Requirement
-1. Create Dockerfile for the image and corresponding k8s manifest to deploy in k8s env. The wisecow service should be exposed as k8s service.
-2. Github action for creating new image when changes are made to this repo
-3. [Challenge goal]: Enable secure TLS communication for the wisecow app.
+2. Create a GitHub Actions workflow to build a new Docker image when changes
+   are made to the repository.
 
-## Expected Artifacts
-1. Github repo containing the app with corresponding dockerfile, k8s manifest, any other artifacts needed.
-2. Github repo with corresponding github action.
-3. Github repo should be kept private and the access should be enabled for following github IDs: nyrahul
+3. Challenge Goal: Enable secure TLS communication for the Wisecow application.
+
+---
+
+## Technologies Used
+
+- Docker
+- Kubernetes
+- Minikube
+- NGINX Ingress Controller
+- GitHub Actions
+- GitHub Container Registry (GHCR)
+- TLS / HTTPS
+- Ubuntu 24.04
+
+---
+
+## Project Structure
+
+```text
+wisecow/
+├── .github/
+│   └── workflows/
+│       └── docker-build.yml
+├── .gitignore
+├── Dockerfile
+├── deployment.yaml
+├── service.yaml
+├── ingress.yaml
+├── wisecow.sh
+├── README.md
+└── LICENSE
